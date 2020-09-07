@@ -10,8 +10,8 @@ gem 'sqlite3', '~> 1.4'
 # Use simple_form to generate form in Views
 gem 'simple_form'
 # Bootstrap for styling
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
+gem 'bootstrap', '~> 4.5.2'
+gem 'sprockets-rails', '~> 3.2.0'
 # For authentication purposes
 gem 'devise'
 # Use Puma as the app server

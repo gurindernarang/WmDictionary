@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>WatermarkDictionary</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>Watermark Dictionary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <div class="container" id="content" tabindex="-1">
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>
