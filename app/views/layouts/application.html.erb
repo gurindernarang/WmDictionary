@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
   <title>Watermark Dictionary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,13 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-<div class="container" id="content" tabindex="-1">
+<body class="d-flex flex-column h-100">
+<div class="container-fluid">
   <%= render "layouts/navigation" %>
-  <%= yield %>
+  <div class="row justify-content-center">
+    <%= yield %>
+  </div>
 </div>
+<%= render "layouts/footer" %>
 </body>
 </html>
