@@ -1,26 +1,23 @@
 $primary: #5A2A98;
 $primary-light: #ebe3f7;
 $border-grey: rgba(46, 27, 70, 0.1);
-.navbar {
-  margin: 0 -15px 0 -15px;
-
-  .navbar-nav a {
-    margin: 0 15px 0 15px;
-    color: $primary;
-  }
-}
 
 .navbar {
   border-bottom: 1px solid $border-grey;
   background-color: $primary-light;
+  margin: 0 -15px 0 -15px;
 
-  ul {
-    li {
-      a {
-        font-weight: 600;
-      }
+  .navbar-nav {
+    .nav-item.active {
+      font-weight: bold;
+    }
+
+    a {
+      margin: 0 15px 0 15px;
+      color: $primary;
     }
   }
+
 
   .navbar-brand {
     svg {
@@ -33,7 +30,7 @@ $border-grey: rgba(46, 27, 70, 0.1);
 }
 
 .common-links {
-  a {
+  a:hover {
     text-decoration: none;
   }
 }
