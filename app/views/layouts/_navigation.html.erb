@@ -70,9 +70,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <% if user_signed_in? %>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= link_to "Home", home_index_url, class: "nav-link" %>
-        </li>
+        <% if current_user.user_role === 'Employee' %>
+          <li class="nav-item active">
+            <%= link_to "Home", translations_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Create New Request", new_translation_url, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Request Status", translations_path, class: "nav-link" %>
+          </li>
+        <% elsif current_user.user_role === 'Supervisor' %>
+          <li class="nav-item active">
+            <%= link_to "Home", translations_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Requests", translations_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Request Status", translations_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to "Requests", translations_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li>
