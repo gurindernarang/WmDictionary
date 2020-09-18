@@ -10,11 +10,15 @@ class TranslationsController < ApplicationController
   end
 
   def create
-    @translation = Translation.new(translation_params)
-    if @translation.save
-      redirect_to translations_path
-    else
-      render 'new'
+    key = translation_params["string_key"].strip! ? translation_params["string_key"].strip : translation_params["string_key"]
+    if key
+      key = key.downcase.gsub " ", "_"
+      @translation = Translation.new({key: key, string_key: translation_params["string_key"]})
+      if @translation.save
+        redirect_to translations_path
+      else
+        render 'new'
+      end
     end
   end
 
